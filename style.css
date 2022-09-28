@@ -1,0 +1,65 @@
+*,*::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+body{
+    padding: 0%;
+    margin: 0%;
+    background: linear-gradient(120deg, pink, rgb(133, 133, 222));
+}
+
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+
+    grid-template-columns: repeat(4, 70px); /*4 columns with 100px width*/
+    grid-template-rows: minmax(80px, auto)repeat(5,50px); /*give space for extra numbers to input at the screen*/
+    
+}
+
+.calculator-grid > button{ /*selects all buttons*/
+    cursor: pointer;
+    font-size: 2em;
+    border: 2px solid #FFFFFF;
+    border-radius: 7px;
+    outline: none;
+    background-color: rgba(255,255,255, .75);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(255,255,255, 0.85);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1 / -1; /*from 1st to last columm*/
+    background-color: rgba(60, 15, 123, 0.5);
+    border: 3px solid #530c5a;
+    border-radius: 5px;
+
+    /*aling text*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all; /*this allows us to say where we are going to break the word in the middle not just in the end of the space*/ 
+}
+
+.output .previous-operand{
+    color: rgba(255,255,255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
